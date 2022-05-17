@@ -19,12 +19,12 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_orange[]      = "#d97e00";
-static const char col_border2[]     = "#222222";
 static const char col_border[]      = "#d97e00";
+static const char col_border2[]     = "#222222";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_border2 },
-	[SchemeSel]  = { col_gray4, col_orange,  col_border },
+	/*               fg         bg          border   */
+	[SchemeNorm] = { col_gray3, col_gray1,  col_border2 },
+	[SchemeSel]  = { col_gray4, col_orange, col_border },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -54,9 +54,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "T",      tile },    /* first entry is default */
-	{ "F",      NULL },    /* no layout function means floating behavior */
-	{ "M",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 /* key definitions */
