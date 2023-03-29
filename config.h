@@ -2,7 +2,7 @@
 #include <X11/XF86keysym.h> 
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 15;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int baralpha  = 0xd0;     /* bar transparency */
