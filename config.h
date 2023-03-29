@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h> 
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -77,7 +78,10 @@ static const char *launchercmd[] = { "/home/koen/.config/rofi/launchers/type-1/l
 static const char *powermenucmd[] = { "/home/koen/.config/rofi/powermenu/type-1/powermenu.sh", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
-
+/* Control Media Players */
+static const char *medplaypausecmd[] = { "playerctl", "play-pause", NULL };
+static const char *mednextcmd[] = { "playerctl", "next", NULL };
+static const char *medprevcmd[] = { "playerctl", "previous", NULL };
 // Patches
 #include "shiftview.c"
 
@@ -87,6 +91,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = powermenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
+  /* Keybindings for Media play/pause/next/previous */
+  { 0,                            XF86XK_AudioPlay, spawn,   {.v = medplaypausecmd } },
+  { 0,                            XF86XK_AudioNext, spawn,   {.v = mednextcmd } },
+  { 0,                            XF86XK_AudioPrev, spawn,   {.v = medprevcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
